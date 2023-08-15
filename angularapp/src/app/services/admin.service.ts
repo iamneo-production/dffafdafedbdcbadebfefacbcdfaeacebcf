@@ -17,8 +17,8 @@ export class AdminService {
   }
 
   createTeam(team: Team): Observable<Team> {
-    console.log()
-    return this.http.post<Team>(`${this.baseUrl}/teams`, team);
+    console.log(team);
+    return this.http.post<Team>(`https://8080-dffafdafedbdcbadebfefacbcdfaeacebcf.premiumproject.examly.io/api/admin/Jpateams`, {id:1, name: 'sdfd', maximumBudget: 45});
   }
 
   updateTeam(teamId: number, team: Team): Observable<Team> {
