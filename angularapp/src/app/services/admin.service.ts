@@ -17,6 +17,7 @@ export class AdminService {
   }
 
   createTeam(team: Team): Observable<Team> {
+    console.log()
     return this.http.post<Team>(`${this.baseUrl}/teams`, team);
   }
 
