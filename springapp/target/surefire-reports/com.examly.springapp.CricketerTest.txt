@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.CricketerTest
 -------------------------------------------------------------------------------
-Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.595 s - in com.examly.springapp.CricketerTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.894 s - in com.examly.springapp.CricketerTest

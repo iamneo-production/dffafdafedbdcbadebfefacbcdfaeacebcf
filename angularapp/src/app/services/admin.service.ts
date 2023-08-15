@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Team } from '../../models/team.model';
 import { Player } from '../../models/player.model';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,19 @@ export class AdminService {
     return this.http.get<Team[]>(`${this.baseUrl}/teams`);
   }
 
+  // createTeam(team: Team): Observable<Team> {
+  //   console.log(team);
+  //   return this.http.post<Team>(`https://8080-dffafdafedbdcbadebfefacbcdfaeacebcf.premiumproject.examly.io/api/admin/teams`, {id:1, name: 'sdfd', maximumBudget: 45});
+  // }
   createTeam(team: Team): Observable<Team> {
     console.log(team);
-    return this.http.post<Team>(`https://8080-dffafdafedbdcbadebfefacbcdfaeacebcf.premiumproject.examly.io/api/admin/teams`, {id:1, name: 'sdfd', maximumBudget: 45});
+    return this.http.post<Team>(`https://8080-dffafdafedbdcbadebfefacbcdfaeacebcf.premiumproject.examly.io/api/admin/teams`, {id:1, name: 'sdfd', maximumBudget: 45})
+      .pipe(
+        catchError(error => {
+          console.error('Error creating team:', error);
+          throw error; // Rethrow the error for further handling
+        })
+      );
   }
 
   updateTeam(teamId: number, team: Team): Observable<Team> {
