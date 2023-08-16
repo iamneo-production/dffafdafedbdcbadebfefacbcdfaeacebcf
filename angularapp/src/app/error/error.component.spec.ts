@@ -28,11 +28,11 @@ describe('ErrorComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create the component', () => {
+  fit('should create the error component', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should display the error message', () => {
+  fit('should display the error message on error page for invalid navigation', () => {
     const errorMessageElement: HTMLElement = fixture.nativeElement.querySelector('p');
     expect(errorMessageElement.textContent).toContain('Test Error Message');
   });
