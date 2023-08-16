@@ -10,9 +10,9 @@ import com.examly.springapp.exceptions.ExceedsTeamBudgetException;
 
 import com.examly.springapp.exceptions.PlayerAlreadyAssignedException;
 
-import com.examly.springapp.repository.*;
+import com.examly.springapp.repository.PlayerRepository;
 
-import com.examly.springapp.repository.*;.TeamRepository;
+import com.examly.springapp.repository.TeamRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

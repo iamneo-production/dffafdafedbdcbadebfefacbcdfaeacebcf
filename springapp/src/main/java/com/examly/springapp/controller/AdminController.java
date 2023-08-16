@@ -48,17 +48,20 @@ return "Welcome to SpringProject";
 
     // @PreAuthorize("hasRole('ADMIN')") // Only users with 'ADMIN' role can access
     // this endpoint
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/teams")
     public Team createTeam(@RequestBody Team team) {
         return adminService.createTeam(team);
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/JpaTeams")
     public List<Team> getAllTeamsJPA()
     {
         return adminService.getAllTeamsJPA();
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/teams")
     public List<Team> getAllTeams() {
         return teamService.getAllTeams();
