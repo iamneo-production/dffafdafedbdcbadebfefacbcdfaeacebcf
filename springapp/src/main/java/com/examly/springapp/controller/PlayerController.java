@@ -22,7 +22,7 @@ public class PlayerController {
     @Autowired
     private PlayerService service;
 
-
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("player/add")
     private boolean addPlayer(@RequestBody PlayerDetails player)
     {
@@ -30,7 +30,7 @@ public class PlayerController {
        return service.addPlayer(player)!=null?true:false;
     }
     
-
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("player/getall")
     private List <PlayerDetails> getallPlayers()
     {

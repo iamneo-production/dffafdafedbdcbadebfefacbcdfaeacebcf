@@ -18,7 +18,7 @@ import java.util.List;
 
 @RequestMapping("/api/organizer")
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:8080")
 
 public class OrganizerController {
 
