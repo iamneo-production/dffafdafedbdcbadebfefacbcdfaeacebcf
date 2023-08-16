@@ -67,7 +67,7 @@ return "Welcome to SpringProject";
     }
     
     @GetMapping("/JpaTeams")
-    public List<Teams> getAllTeamsJPA()
+    public List<Team> getAllTeamsJPA()
     {
         return adminService.getAllTeamsByJPA();
     }

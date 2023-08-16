@@ -5,7 +5,6 @@ import com.examly.springapp.entities.Team;
 import com.examly.springapp.Teams;
 
 import com.examly.springapp.repositories.PlayerRepository;
-import com.examly.springapp.repositories.TeamRepo;
 import com.examly.springapp.repositories.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,14 +16,12 @@ import java.util.NoSuchElementException;
 public class AdminService {
     private TeamRepository teamRepository;
     private PlayerRepository playerRepository;
-    private TeamRepo teamRepo;
 
 
     @Autowired
-    public AdminService(TeamRepository teamRepository, PlayerRepository playerRepository,TeamRepo teamRepo) {
+    public AdminService(TeamRepository teamRepository, PlayerRepository playerRepository) {
         this.teamRepository = teamRepository;
         this.playerRepository = playerRepository;
-        this.teamRepo=teamRepo;
     }
     
     // Method to create a new team
@@ -77,9 +74,9 @@ public class AdminService {
         return teamList;
     }
     
-    public List<Teams> getAllTeamsByJPA()
+    public List<Team> getAllTeamsByJPA()
     {
-        return teamRepo.findAll();
+        return teamRepository.findAll();
     }
     
 
